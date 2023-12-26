@@ -6,7 +6,7 @@ from langchain.chains import LLMChain
 from dotenv import load_dotenv
 
 load_dotenv()
-OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
 information = """
@@ -15,6 +15,7 @@ quantum mechanics and quantum electrodynamics. He is credited with laying the fo
 He was the Lucasian Professor of Mathematics at the University of Cambridge, a professor of physics at Florida State University and the University of Miami, 
 and a 1933 Nobel Prize in Physics recipient.
 """
+
 
 def get_summary_chain() -> LLMChain:
     summary_template = """
@@ -26,11 +27,11 @@ def get_summary_chain() -> LLMChain:
     summary_prompt_template = PromptTemplate(
         input_variables=["information", "twitter_posts"],
         template=summary_template,
-        partial_variables={
-        },
+        partial_variables={},
     )
 
     return LLMChain(llm=llm, prompt=summary_prompt_template)
+
 
 if __name__ == "__main__":
     print(f"""running with key: {OPENAI_API_KEY}""")
