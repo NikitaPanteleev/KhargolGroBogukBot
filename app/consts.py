@@ -10,4 +10,4 @@ TOKEN: Final = os.environ["TELEGRAM_KEY"]
 
 
 BOT_USERNAME: Final = "KhargolGroBogukBot"
-FAIS_STORAGE: Final = 'chat_index_fais-23'
+FAIS_STORAGE: Final = "chat_index_fais-23-chunk-100"

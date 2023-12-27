@@ -15,12 +15,13 @@ from consts import BOT_USERNAME, TOKEN
 
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hello there. I'm a Dagon Fel bot")
+    await update.message.reply_text("Hello there. I'm telegram assistant bot")
+
 
 async def ask_question(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    question = update.message.text.replace('/ask_question', '').strip()
-    print(f'generating answer for {question}')
-    if len(question) < 1:
+    question = update.message.text.replace("/ask_question", "").strip()
+    print(f"generating answer for {question}")
+    if len(question) < 10:
         await update.message.reply_text("question is too short")
         return
     answer = ask_question_from_llm(question)
